@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import SearchPage from './components/SearchPage';
+import BookShelf from './components/BookShelf';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <p>Book Search App</p> */}
+        {/* <Link to='/books'>Book Shelf</Link> */}
+      <Router>
+        <Routes>
+          <Route path='/' element={<SearchPage />} />
+          <Route path='/books' element={<BookShelf />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
